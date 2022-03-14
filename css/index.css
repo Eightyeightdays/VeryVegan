@@ -16,6 +16,7 @@ header{
     margin: 20px 0 10px 0;
     width: 45%;
 }
+
 .icon{
     display: flex;
     justify-content: center;
@@ -59,7 +60,7 @@ h1{
     text-align: center;
     /* background: crimson; */
 }
-#explore-button{
+.button{
     display: flex;
     align-items: center;
     color: white;

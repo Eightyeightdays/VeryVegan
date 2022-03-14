@@ -1,0 +1,35 @@
+header{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.logo{
+    margin: 20px 0 10px 0;
+    width: 45%;
+}
+footer{
+    background: #353535;
+    padding: 20px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+footer a{
+    display: flex;
+    align-items: center;
+}
+.logo-footer{
+    filter: invert();
+    width: 28%;
+    margin-bottom: 10px;
+}
+.footer-icon{
+    padding-right: 10px;
+}
+footer p{
+    margin: 5px 0 5px 0;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
