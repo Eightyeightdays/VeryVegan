@@ -42,10 +42,11 @@ header{
 }
 .resto-title{
     font-family: Shrikhand;
+    margin: 0 20px 0 20px;
 }
 .heart-icon{
     font-size: 1.8em;
-    margin-left: 20px;
+    margin: 0 20px 0 20px;
 }
 
 /* MENU SECTION */
@@ -74,57 +75,72 @@ header{
     display: flex;
     overflow: hidden;
     cursor: pointer;
+    position: relative;
+}
+
+.menu-text{
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  margin-right: auto;
+  padding: 10px;
+  flex: 1 2 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .dish-title{
     font-size: 16px;
 }
 .dish-title, .dish-details{
     margin: 0;
+    padding-left: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
 }
-.menu-text{
-  display: flex;
-  flex-direction: column;
-  margin-right: auto;
-  padding: 10px;
-}
-.animation-container{
-  display: flex;
-  background: gold;
-  position: relative;
-  right: -80px;
+.price-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex: 2 1 1;
+    padding: 10px;
 }
 .price{
-  position: relative;
-  right: 40px;
-  transition: all 1s ease-out;
-  align-self: flex-end;
+  transition: width 0.6s ease-out 0.2s;
   font-weight: bold;
+  margin: 0;
+  width: 30px;
 }
+
 .tick-container{
   background: var(--tertiary);
-  position: relative;
-  right: 30px;
   width: 50px;
+  height: 100%;
+  color: white;
+  font-size: 1.5em;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 1s ease-out;
+  position: absolute;
+  right: -50px;
+  transition: right 1s ease-out;
 }
 .tick{
-  color: white;
-  font-size: 2em;
-  transition: all 1s ease-out;
+    transition: all 1s ease-out;
 }
 
 .menu-card:hover .tick-container{
-  right: 80px;
-}
-.menu-card:hover .fa-check-circle{
-  transform: rotate(360deg);
+  right: 0px;
 }
 .menu-card:hover .price{
-  right: 90px;
+    width: 70px;
+  }
+.menu-card:hover .tick{
+    transform: rotate(360deg);
 }
+
 
 
 
