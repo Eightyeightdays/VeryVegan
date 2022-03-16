@@ -19,6 +19,10 @@ footer a{
     display: flex;
     align-items: center;
     color: white;
+    width: max-content;
+}
+footer a:hover{
+    text-decoration: underline;
 }
 .logo-footer{
     filter: invert();
