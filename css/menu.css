@@ -3,9 +3,12 @@
     --primary: #9356DC;
     --secondary: #FF79DA;
     --tertiary: #99E2D0;
+    --background: #f5f5f5;
+    --highlight: #f4ecfe;
+    --box-shadow: 0 10px 25px 3px HSL(0, 0%, 85%);
+    --animation-duration: 4s;
     font-family: Roboto;
     font-size: 14px;
-    --box-shadow: 0 5px 5px 0px HSL(0, 0%, 90%);
 }
 
 /* NEED TO UPDATE header-footer.css */
@@ -13,6 +16,10 @@ header{
     display: flex;
     justify-content: center;
     position: relative;
+}
+.logo{
+    margin: 20px 0 10px 0;
+    width: 45%;
 }
 .arrow-container{
     position: absolute;
@@ -30,7 +37,7 @@ header{
 .title-box{
     border-top-left-radius: 35px;
     border-top-right-radius: 35px;
-    background: #f6f6f6;
+    background: var(--background);
     z-index: 1;
     padding: 10px 0 10px 0;
     position: relative;
@@ -42,14 +49,15 @@ header{
 }
 .resto-title{
     font-family: Shrikhand;
-    margin: 0 20px 0 20px;
+    margin: 30px 20px 20px 20px;
+    font-weight: normal;
 }
 .heart-icon{
     font-size: 1.8em;
-    margin: 0 20px 0 20px;
+    margin: 0 20px 0 10px;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
-    color: #f6f6f6;
+    color: var(--background);
     transition: color 0.3s ease-in;
 }
 .heart-icon:hover{
@@ -62,7 +70,7 @@ header{
 /* MENU SECTION */
 
 .menu{
-    background: #f5f5f5;
+    background: var(--background);
     margin-bottom: -10px;
 }
 .menu-subheading{
@@ -213,7 +221,7 @@ header{
     display: flex;
     justify-content: center;
     padding: 30px 0 30px 0;
-    background: #f5f5f5;
+    background: var(--background);
 }
 
 /* BUTTON */
@@ -286,11 +294,11 @@ button:hover{
     .price-container{
         padding-right: 50px;
         transition-delay: 0s;
-        /* background:#9356DC; */
     }
     .tick-container{
         width: 200px;
         right: -200px;
+        font-size: 2em;
     }
     .menu-card:hover .price{
         width: 220px;
@@ -299,8 +307,11 @@ button:hover{
 
 /* DESKTOP */
 
-@media (min-width: 1275px){
+@media (min-width: 1380px){
 
+    .resto-title{
+        font-size: 50px;
+    }
     .menu{
         display: flex;
         justify-content: center;

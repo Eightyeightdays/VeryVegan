@@ -2,18 +2,20 @@
     --primary: #9356DC;
     --secondary: #FF79DA;
     --tertiary: #99E2D0;
+    --background: #f5f5f5;
+    --highlight: #f4ecfe;
+    --box-shadow: 0 10px 25px 3px HSL(0, 0%, 85%);
+    --animation-duration: 4s;
     font-family: Roboto;
     font-size: 14px;
-    --box-shadow: 0 10px 25px 3px HSL(0, 0%, 85%);
-    --animation-duration: 3s;
 }
 body{
     overflow:hidden;
-    animation: unhide var(--animation-duration) ease-in 3s 2 forwards;
+    animation: unhide var(--animation-duration) ease-in 0.1s forwards;
 }
 @keyframes unhide{              /* Make scrollbar visible again once page has loaded */
     100%{
-        overflow:visible;
+        overflow-y:visible;
     }
 }
 .loading-screen{
@@ -59,7 +61,7 @@ body{
     color: var(--primary);
     left: -100px;
     box-sizing: border-box;
-    /* animation: shadowRolling 2s linear 2; */
+    animation: shadowRolling 3s linear 2;
   }
 @keyframes shadowRolling {
     0% {
@@ -127,7 +129,7 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #f6f6f6;
+    background: var(--background);
     padding-bottom: 40px;
 }
 .subtitle{
@@ -140,12 +142,10 @@ h1{
     text-align: center;
     padding: 20px;
     font-size: 20px;
-    /* background: gold; */
 }
 #intro h2{
     margin: 0;
     text-align: center;
-    /* background: crimson; */
 }
 .button{
     display: flex;
@@ -171,25 +171,74 @@ h2{
 .overview-card{
     display: flex;
     align-items: center;
-    animation: highlighted 2s ease-in forwards;
 }
 
-@keyframes highlighted{
-    100%{
-        
-    }
-}
 .overview-card-container{
     display: flex;
     align-items: center;
-    background: #f6f6f6;
+    background: var(--background);
     border-radius: 25px;
     padding: 8px;
     margin: 15px 15px 5px 25px;
     width: 100%;
     box-shadow: var(--box-shadow);
     position: relative;
+    animation: highlight-card 3s ease-out;
 }
+.overview-icon{
+    animation: highlight-icon 3s ease-out 6s;
+}
+
+.first-card{
+    animation-delay: 4s;
+}
+.second-card{
+    animation-delay: 6s;
+   
+}
+.third-card{
+    animation-delay: 8s;
+    animation-fill-mode: forwards;
+    animation: highlight-end 3s ease-out 9s forwards;
+}
+@keyframes highlight-card{
+    50%{
+        background: var(--highlight);
+        box-shadow: 0 10px 10px 0px HSL(0, 0%, 75%);
+    }
+    100%{
+        background: var(--background);
+    }
+}
+@keyframes highlight-end{       /* maintain end state */
+    100%{
+       background: var(--highlight);
+    }
+}
+@keyframes highlight-icon{
+    50%{
+       color: var(--primary);
+    }
+    100%{
+       color: grey;
+    }
+}
+@keyframes highlight-icon-end{      /* maintain end state */
+    100%{
+        color: var(--primary);
+    }
+}
+.icon-1{
+    animation-delay: 4s;
+}
+.icon-2{
+    animation-delay: 6s;
+}
+.icon-3{
+    animation-delay: 8s;
+    animation: highlight-icon-end 3s ease-out 8s forwards;
+}
+
 .circle{
     background: var(--primary);
     width: 20px;
@@ -202,16 +251,35 @@ h2{
     font-size: 0.75em;
     position: absolute;
     left: -10px;
+    animation: highlighted-circle 3s ease-out;   
+}
+.first-circle{
+    animation-fill-mode: none;
+    animation-delay: 4s;
+}
+.second-circle{
+    animation-delay: 6s;
+    animation-fill-mode: none;
+}
+.third-circle{
+    animation-delay: 8s;
+    animation-fill-mode: none;
+}
+@keyframes highlighted-circle{
+    50%{
+        background: var(--secondary);;
+    }
 }
 .overview-icon{
     margin: 20px;
     color: grey;
 }
+
 .overview-card-text{
     font-weight: bold;
 }
 #cards{
-    background: #f6f6f6;
+    background: var(--background);
     padding-top: 28px;
     padding-bottom: 40px;
 }
@@ -252,7 +320,6 @@ h2{
     display: flex;
     align-items: center;
     padding: 15px;
-    /* background: gold; */
     height: 65px;
 }
 .card-text{
@@ -263,11 +330,7 @@ h2{
     margin: 0;
 }
 .card-text__title{
-    /* background: gold; */
     padding-bottom: 5px;
-}
-.card-location{
-    /* background: crimson; */
 }
 .heart-icon{
     font-size: 1.5em;
@@ -287,12 +350,7 @@ h2{
 
 
 
-.overview-card-container:hover{
-    background: #f5edff;
-}
-.overview-card-container:hover span{
-    color: var(--primary);
-}
+
 a:hover{
     cursor: pointer;
 }
@@ -368,10 +426,10 @@ button:hover{
 /* DESKTOP */
 
 @media (min-width: 1000px){
-    body{
+    /* body{
         background: var(--tertiary);
         padding: 0 100px 0 100px;
-    }
+    } */
     header, #overview{
         background: white;
     }
@@ -391,6 +449,9 @@ button:hover{
     }
     #overview{
         padding-bottom: 40px;
+        gap: 30px;
+    }
+    .overview-flexbox{
         gap: 30px;
     }
     .overview-card{
