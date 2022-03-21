@@ -3,7 +3,7 @@ header{
     justify-content: center;
     width: 100%;
 }
-.logo{
+.logo--header{
     margin: 20px 0 10px 0;
     width: 45%;
 }
@@ -24,7 +24,7 @@ footer a{
 footer a:hover{
     text-decoration: underline;
 }
-.logo-footer{
+.logo--footer{
     filter: invert();
     width: 28%;
     margin-bottom: 10px;
@@ -34,12 +34,6 @@ footer a:hover{
 }
 footer p{
     margin: 5px 0 5px 0;
-}
-a{
-    text-decoration: none;
-}
-a:visited{
-    color: inherit;
 }
 
 /* MEDIA QUERIES */

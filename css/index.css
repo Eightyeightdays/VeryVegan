@@ -9,6 +9,9 @@
     font-family: Roboto;
     font-size: 14px;
 }
+
+/* || LOADING SCREEN */
+
 body{
     overflow:hidden;
     animation: unhide var(--animation-duration) ease-in 0.1s forwards;
@@ -51,7 +54,7 @@ body{
         height: 0;
     }
 }
-.loader {
+.loading-screen__spinner {
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -61,9 +64,10 @@ body{
     color: var(--primary);
     left: -100px;
     box-sizing: border-box;
-    animation: shadowRolling 3s linear 2;
+    animation: spinner 3s linear 2;
   }
-@keyframes shadowRolling {
+
+@keyframes spinner {
     0% {
       box-shadow: 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
     }
@@ -93,59 +97,46 @@ body{
     }
   }
 
+  /* || LOCATION */
 
-header{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-.logo{
-    margin: 20px 0 10px 0;
-    width: 45%;
-}
-
-#location{
+.location{
     display: flex;
     justify-content: center;
     background: linear-gradient(#d0d0d0,#eaeaea 10%);
 }
-.location-container{
+.location__container{
     position: relative;
     width: max-content;
 }
-.icon{
+.location__icon{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.fa-map-marker-alt{
-   margin-right: 20px;
-   position: absolute;
-   left: -30px;
-   top: 12px;
+    margin-right: 20px;
+    position: absolute;
+    left: -30px;
+    top: 12px;
 }
 
-#intro{
+/* || INTRO */
+
+.intro{
     display: flex;
     flex-direction: column;
     align-items: center;
     background: var(--background);
     padding-bottom: 40px;
 }
-.subtitle{
-    text-align: center;
-    font-size: 16px;
-    margin: 0 20px 10px 20px;
-}
-h1{
+.intro__title{
     margin: 10px 0 0 0;
     text-align: center;
     padding: 20px;
     font-size: 20px;
 }
-#intro h2{
-    margin: 0;
+.intro__subtitle{
     text-align: center;
+    font-size: 16px;
+    margin: 0 20px 10px 20px;
 }
 .button{
     display: flex;
@@ -159,21 +150,22 @@ h1{
     transition: background-color, box-shadow 0.4s ease-out;
     margin: 20px 0 10px 0;
 }
-#overview{
+/* || OVERVIEW */
+
+.overview{
     display: flex;
     flex-direction: column;
     padding-bottom: 50px;
     padding-top: 20px;
 }
-h2{
+.overview__title{
     margin-left: 20px;
 }
-.overview-card{
+.overview__card-wrapper{
     display: flex;
     align-items: center;
 }
-
-.overview-card-container{
+.overview__card{
     display: flex;
     align-items: center;
     background: var(--background);
@@ -185,21 +177,21 @@ h2{
     position: relative;
     animation: highlight-card 3s ease-out;
 }
-.overview-icon{
+.overview__icon{
     animation: highlight-icon 3s ease-out 6s;
+    margin: 20px;
+    color: grey;
 }
-
 .first-card{
     animation-delay: 4s;
 }
 .second-card{
     animation-delay: 6s;
-   
 }
 .third-card{
     animation-delay: 8s;
     animation-fill-mode: forwards;
-    animation: highlight-end 3s ease-out 9s forwards;
+    animation: highlight-card-end 3s ease-out 9s forwards;
 }
 @keyframes highlight-card{
     50%{
@@ -210,7 +202,7 @@ h2{
         background: var(--background);
     }
 }
-@keyframes highlight-end{       /* maintain end state */
+@keyframes highlight-card-end{       /* maintain end state */
     100%{
        background: var(--highlight);
     }
@@ -238,7 +230,6 @@ h2{
     animation-delay: 8s;
     animation: highlight-icon-end 3s ease-out 8s forwards;
 }
-
 .circle{
     background: var(--primary);
     width: 20px;
@@ -270,33 +261,31 @@ h2{
         background: var(--secondary);;
     }
 }
-.overview-icon{
-    margin: 20px;
-    color: grey;
-}
-
-.overview-card-text{
+.overview__card-text{
     font-weight: bold;
 }
-#cards{
+
+/* || RESTAURANT CARDS */
+
+.resto{
     background: var(--background);
     padding-top: 28px;
     padding-bottom: 40px;
 }
-.flexbox{
+.resto__wrapper{
     margin-top: 25px;
 }
-#cards a{
+.resto__link{
     color: black;
 }
-.resto-card{
+.resto__card{
     background: white;
     border-radius: 15px;
     margin: 0 20px 15px 20px;
     overflow: hidden;
     box-shadow: var(--box-shadow);
 }
-.card-img-box{
+.resto__img-box{
     position: relative;
 }
 .img-label{
@@ -310,26 +299,26 @@ h2{
     right: 10px;
     z-index: 1;
 }
-.card-img{
+.resto__img{
     position: relative;
     height: 160px;
     width: 100%;
     object-fit: cover;
 }
-.card-details{
+.resto__card-details{
     display: flex;
     align-items: center;
     padding: 15px;
     height: 65px;
 }
-.card-text{
+.resto__card-text{
     margin-right: auto;
 }
-.card-text__title, .card-location{
+.resto__card-title, .resto__card-location{
     font-size: 14px;
     margin: 0;
 }
-.card-text__title{
+.resto__card-title{
     padding-bottom: 5px;
 }
 .heart-icon{
@@ -339,15 +328,13 @@ h2{
     color: white;
     transition: color 0.2s ease-in;
 }
-
-
 .heart-icon:hover{
     color: var(--primary);
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: var(--primary);
     cursor: pointer;
 }
-
+/*  */
 
 
 
@@ -367,6 +354,8 @@ button:hover{
     cursor: pointer;
 }
 
+
+
 /* MEDIA QUERIES */
 
 /* TABLET */
@@ -379,10 +368,10 @@ button:hover{
         left: -50px;
         top: 19px;
      }
-    #intro *{
+    #intro *{           /* don't use universal selector! */
         margin: 5px;
     }
-    h1{
+    .intro__title{
         font-size: 28px;
     }
     .subtitle{
@@ -391,10 +380,10 @@ button:hover{
     .button{
         padding: 20px;
     }
-    #overview, #cards{
+    #overview, .resto{
         padding: 20px;
     }
-    .overview-flexbox{
+    .overview__wrapper{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -403,19 +392,19 @@ button:hover{
     #overview h2{
         align-self: flex-start;
     }
-    .overview-card{
+    .overview__card-wrapper{
         width: max-content;
     }
-    .overview-card-text{
+    .overview__card-text{
         margin-right: 20px;
     }
-    .resto-card{
+    .resto__card{
         margin-bottom: 40px;
     }
-    .card-img{
+    .resto__img{
         height: 220px;
     }
-    .card-text__title, .card-location{
+    .resto__card-title, .resto__card-location{
         font-size: 18px;
     }
     footer{
@@ -426,44 +415,31 @@ button:hover{
 /* DESKTOP */
 
 @media (min-width: 1000px){
-    /* body{
-        background: var(--tertiary);
-        padding: 0 100px 0 100px;
-    } */
-    header, #overview{
-        background: white;
-    }
-    h1{
+    
+    .intro__title{
         font-size: 40px;
     }
-    #intro .button{
+    .button--explore{
         margin-top: 20px;
     }
-    .flexbox{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    #cards .flexbox{
-        flex-wrap: wrap;
-    }
-    #overview{
+    /*  */
+    .overview{
         padding-bottom: 40px;
         gap: 30px;
     }
-    .overview-flexbox{
+    .overview__wrapper{
         gap: 30px;
     }
-    .overview-card{
+    .overview__card-wrapper{
         width: max-content;
     }
-    .overview-card-container{
+    .overview__card{
         padding-left: 30px;
     }
-    .overview-card-text{
+    .overview__card-text{
         padding-right: 20px;
     }
-    .overview-icon{
+    .overview__icon{
         font-size: 1.5em;
     }
     .circle{
@@ -472,14 +448,20 @@ button:hover{
         font-size: 1.5em;
         left: -20px;
     }
-    .flexbox a{
+    /*  */
+    .resto__wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .resto__link{
         flex-basis: 50%;
     }
-    .card-details{
+    .resto__card-details{
         height: 100px;
         padding: 30px;
     }
-    .card-text{
+    .resto__card-text{
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -490,7 +472,7 @@ button:hover{
 }
 
 @media(min-width: 1160px){
-    .card-text__title, .card-location{
+    .resto__card-title, .resto__card-location{
         font-size: 24px;
     }
 }
