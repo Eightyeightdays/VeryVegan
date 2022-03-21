@@ -1,12 +1,18 @@
-header{
+.header{
     display: flex;
     justify-content: center;
     width: 100%;
 }
-.logo--header{
+.header__arrow-container{
+    position: absolute;
+    left: 20px;
+    top: 25px;
+}
+.header__logo{
     margin: 20px 0 10px 0;
     width: 45%;
 }
+
 footer{
     background: #353535;
     padding: 20px;
@@ -15,25 +21,35 @@ footer{
     flex-direction: column;
     color: white;
 }
-footer a{
+.footer__link{
     display: flex;
     align-items: center;
     color: white;
     width: max-content;
 }
-footer a:hover{
+.footer__link:hover{
     text-decoration: underline;
 }
-.logo--footer{
+.footer__logo{
     filter: invert();
     width: 28%;
     margin-bottom: 10px;
 }
-.footer-icon{
+.footer__icon{
     padding-right: 10px;
 }
-footer p{
+.footer__text{
     margin: 5px 0 5px 0;
+}
+
+a{
+    text-decoration: none;
+}
+a:hover{
+    cursor: pointer;
+}
+a:visited{
+    color: inherit;
 }
 
 /* MEDIA QUERIES */

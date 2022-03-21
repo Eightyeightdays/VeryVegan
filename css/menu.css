@@ -11,22 +11,8 @@
     font-size: 14px;
 }
 
-/* NEED TO UPDATE header-footer.css */
-header{
-    display: flex;
-    justify-content: center;
-    position: relative;
-}
-.logo{
-    margin: 20px 0 10px 0;
-    width: 45%;
-}
-.arrow-container{
-    position: absolute;
-    left: 20px;
-    top: 25px;
-}
-.img-main{
+
+.resto-preview__img{
     width: 100%;
     height: 250px;
     z-index: 0;
@@ -34,7 +20,7 @@ header{
     object-fit: cover;
 }
 
-.title-box{
+.resto-title{
     border-top-left-radius: 35px;
     border-top-right-radius: 35px;
     background: var(--background);
@@ -45,13 +31,15 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: -35px;
+    margin-bottom: -60px;
 }
-.resto-title{
+.resto-title__text{
     font-family: Shrikhand;
     margin: 30px 20px 20px 20px;
     font-weight: normal;
 }
+
+
 .heart-icon{
     font-size: 1.8em;
     margin: 0 20px 0 10px;
@@ -71,25 +59,26 @@ header{
 
 .menu{
     background: var(--background);
-    margin-bottom: -10px;
+    padding-bottom: 20px;
+    
 }
-.menu-subheading{
-    margin: 0;
+.menu__subheading{
+    padding: 20px 0 0 0;
     font-size: 16px;
     font-weight: normal;
-    margin-left: 20px;
+    margin: 5px 20px;
 }
-.underline{
+.menu__underline{
     background: var(--tertiary);
     width: 40px;
     height: 3px;
     margin-left: 20px;
-    margin-top: 5px;
+    margin-bottom: 15px;
 }
-.menu-card{
+.menu__card{
     background: white;
     border-radius: 15px;
-    margin: 10px;
+    margin: 14px 10px;
     box-shadow: var(--box-shadow);
     display: flex;
     overflow: hidden;
@@ -126,7 +115,7 @@ header{
     animation-delay: 2.6s;
 }
 .tenth{
-    animation-delay: 5.9s;
+    animation-delay: 2.9s;
 }
 
 @keyframes fade{
@@ -143,29 +132,29 @@ header{
 }
 
 
-.menu-text{
+.menu__text{
   display: flex;
   flex-direction:column;
   justify-content: center;
   margin-right: auto;
-  padding: 10px;
+  padding: 12px;
   flex: 0 2 1;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
-.dish-title{
+.menu__dish-title{
     font-size: 16px;
+    padding-bottom: 8px;
 }
-.dish-title, .dish-details{
+.menu__dish-title, .menu__dish-details{
     margin: 0;
-    padding-left: 10px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
     width: 100%;
 }
-.price-container{
+.menu__price-container{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -175,7 +164,7 @@ header{
     right: 0;
     transition: right 0.6s ease-out 0.2s;
 }
-.price{
+.menu__price{
   transition: width 0.6s ease-out 0.2s;
   font-weight: bold;
   margin: 0;
@@ -183,9 +172,9 @@ header{
   position: relative;
 }
 
-.tick-container{
+.menu__tick-container{
   background: var(--tertiary);
-  width: 50px;
+  width: 60px;
   height: 100%;
   color: white;
   font-size: 1.5em;
@@ -193,34 +182,27 @@ header{
   justify-content: center;
   align-items: center;
   position: absolute;
-  right: -50px;
+  right: -60px;
   transition: right 1s ease-out;
 }
-.tick{
+.menu__tick{
     transition: all 1s ease-out;
 }
 
-.menu-card:hover .tick-container{
+.menu__card:hover .menu__tick-container{
   right: 0px;
 }
-.menu-card:hover .price{
-    width: 70px;
+.menu__card:hover .menu__price{
+    width: 100px;
 }
-.menu-card:hover .tick{
+.menu__card:hover .menu__tick{
     transform: rotate(360deg);
 }
 
-
-
-
-
-
-
-
-#order{
+.order{
     display: flex;
     justify-content: center;
-    padding: 30px 0 30px 0;
+    padding-bottom: 30px;
     background: var(--background);
 }
 
@@ -234,7 +216,7 @@ header{
     border: none;
     background: linear-gradient(var(--secondary),var(--primary));
     box-shadow: var(--box-shadow);
-    padding: 10px 30px 10px 30px;
+    padding: 15px 40px;
     transition: background-color, box-shadow 0.4s ease-out;
     margin: 10px 0 20px 0;
 }
@@ -254,16 +236,16 @@ button:hover{
     :root{
         font-size: 16px;
     }
-    .menu-card{
+    .menu__card{
         margin: 20px 40px;
     }
-    .menu-card h3, .menu-subheading{
+    .menu__dish-title, .menu__subheading{
         font-size: 18px;
     }
     .menu{
         margin-bottom: -20px;
     }
-    .price-container{
+    .menu__price-container{
         padding: 20px;
     }
     .button{
@@ -278,71 +260,71 @@ button:hover{
     .menu{
         margin-bottom: -30px;
     }
-    .menu-card{
+    .menu__card{
         margin: 30px 50px;
     }
-    .menu-card h3, .menu-subheading{
+    .menu__dish-title, .menu__subheading{
         font-size: 20px;
     }
-    .menu-text *{
+    .menu__dish-title, .menu__dish-details{
         padding: 10px;
     }
     .button{
         font-size: 22px;
         padding: 20px 50px;
     }
-    .price-container{
+    .menu__price-container{
         padding-right: 50px;
         transition-delay: 0s;
     }
-    .tick-container{
+    .menu__tick-container{
         width: 200px;
         right: -200px;
         font-size: 2em;
     }
-    .menu-card:hover .price{
+    .menu__card:hover .menu__price{
         width: 220px;
     }
 }
 
 /* DESKTOP */
 
-@media (min-width: 1380px){
+@media (min-width: 1400px){
 
     .resto-title{
-        font-size: 50px;
+        font-size: 30px;
     }
     .menu{
         display: flex;
         justify-content: center;
         padding: 30px;
     }
-    .underline{
+    .menu__underline{
         margin-bottom: 40px;
     }
-    .starter-container, .main-container, .dessert-container{  
+    .menu__starter-container, .menu__main-container, .menu__dessert-container{  
         width: 33.33%;
     }
-    .menu-card{
+    .menu__card{
         margin: 20px 10px;
     }
-    .menu-text *{
+    .menu__dish-title, .menu__dish-details{
         padding: 5px;
     }
-    .dish-title, .dish-details{
+    .menu__dish-title, .menu__dish-details{
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
     }
-    .price-container{
+    .menu__price-container{
         padding: 0 20px 15px 0;
         transition-delay: 0.1s;
     }
-    .tick-container{
+    .menu__tick-container{
         width: 100px;
         right: -100px;
     }
-    .menu-card:hover .price{
-        width: 120px;
+    .menu__card:hover .menu__price{
+        width: 140px;
     }
 }

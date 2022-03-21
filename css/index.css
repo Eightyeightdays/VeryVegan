@@ -175,10 +175,10 @@ body{
     width: 100%;
     box-shadow: var(--box-shadow);
     position: relative;
-    animation: highlight-card 3s ease-out;
+    animation: highlight-card 3s ease-out;      /* Animate card colours on page load */
 }
 .overview__icon{
-    animation: highlight-icon 3s ease-out 6s;
+    animation: highlight-icon 3s ease-out 6s;   /* Animate card icon colours on page load */
     margin: 20px;
     color: grey;
 }
@@ -191,7 +191,7 @@ body{
 .third-card{
     animation-delay: 8s;
     animation-fill-mode: forwards;
-    animation: highlight-card-end 3s ease-out 9s forwards;
+    animation: highlight-card-end 3s ease-out 9s forwards;  /* Maintain end state for third card */
 }
 @keyframes highlight-card{
     50%{
@@ -228,7 +228,7 @@ body{
 }
 .icon-3{
     animation-delay: 8s;
-    animation: highlight-icon-end 3s ease-out 8s forwards;
+    animation: highlight-icon-end 3s ease-out 8s forwards;  /* Maintain end state for third icon */
 }
 .circle{
     background: var(--primary);
@@ -242,7 +242,7 @@ body{
     font-size: 0.75em;
     position: absolute;
     left: -10px;
-    animation: highlighted-circle 3s ease-out;   
+    animation: highlighted-circle 3s ease-out;   /* Animate circle colour on page load */
 }
 .first-circle{
     animation-fill-mode: none;
@@ -271,6 +271,9 @@ body{
     background: var(--background);
     padding-top: 28px;
     padding-bottom: 40px;
+}
+.resto__title{
+    margin-left: 20px;
 }
 .resto__wrapper{
     margin-top: 25px;
@@ -368,9 +371,6 @@ button:hover{
         left: -50px;
         top: 19px;
      }
-    #intro *{           /* don't use universal selector! */
-        margin: 5px;
-    }
     .intro__title{
         font-size: 28px;
     }
@@ -406,9 +406,6 @@ button:hover{
     }
     .resto__card-title, .resto__card-location{
         font-size: 18px;
-    }
-    footer{
-        padding: 40px;  /* needs to be changed in other stylesheet */
     }
 }
 
