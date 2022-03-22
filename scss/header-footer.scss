@@ -1,0 +1,70 @@
+.header{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    &__arrow-container{
+        position: absolute;
+        left: 20px;
+        top: 25px;
+    }
+    &__logo{
+        margin: 20px 0 10px 0;
+        width: 45%;
+    }
+}
+
+.footer{
+    background: #353535;
+    padding: 20px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    
+    &__link{
+        display: flex;
+        align-items: center;
+        color: white;
+        width: max-content;
+    }
+    &__link:hover{
+        text-decoration: underline;
+    }
+    &__logo{
+        filter: #{brightness(10000%)};
+        width: 28%;
+        margin-bottom: 10px;
+    }
+    &__icon{
+        padding-right: 10px;
+    }
+    &__text{
+        margin: 5px 0 5px 0;
+    }
+}
+
+a{
+    text-decoration: none;
+   
+    &:hover{
+        cursor: pointer;
+    }
+    &:visited{
+        color: inherit;
+    }
+
+}
+
+/* MEDIA QUERIES */
+
+/* TABLET */
+
+@media (min-width: 415px){
+    
+    footer{
+        padding: 40px;
+        align-items: flex-end;
+    }
+
+}
