@@ -196,18 +196,23 @@ body{
     }
 }
 
+/* Create animation classes for cards */
+$animation-delay: (4s, 6s, 8s);
 
-.first-card{
-    animation-delay: 4s;
+@for $i from 1 through 3 {
+    @if $i == 3{
+        .card-3{
+            animation-delay: nth($animation-delay, $i);
+            animation-fill-mode: forwards;
+            animation: highlight-card-end 3s ease-out 9s forwards;
+        }
+    }@else{
+        .card-#{$i} {
+            animation-delay: nth($animation-delay, $i);
+        }
+    }
 }
-.second-card{
-    animation-delay: 6s;
-}
-.third-card{
-    animation-delay: 8s;
-    animation-fill-mode: forwards;
-    animation: highlight-card-end 3s ease-out 9s forwards;  /* Maintain end state for third card */
-}
+
 @keyframes highlight-card{
     50%{
         background: $highlight;
@@ -235,16 +240,21 @@ body{
         color: $primary;
     }
 }
-.icon-1{
-    animation-delay: 4s;
+
+/* Create animation classes for icons */
+@for $i from 1 through 3 {
+    @if $i == 3{
+        .icon-3{
+            animation-delay: nth($animation-delay, $i);
+            animation: highlight-icon-end 3s ease-out 8s forwards
+        }
+    }@else{
+        .icon-#{$i} {
+            animation-delay: nth($animation-delay, $i);
+        }
+    }
 }
-.icon-2{
-    animation-delay: 6s;
-}
-.icon-3{
-    animation-delay: 8s;
-    animation: highlight-icon-end 3s ease-out 8s forwards;  /* Maintain end state for third icon */
-}
+
 .circle{
     background: $primary;
     width: 20px;
@@ -259,18 +269,15 @@ body{
     left: -10px;
     animation: highlighted-circle 3s ease-out;   /* Animate circle colour on page load */
 }
-.first-circle{
-    animation-fill-mode: none;
-    animation-delay: 4s;
+
+/* Create animation classes for circles */
+@for $i from 1 through 3 {
+    .circle-#{$i} {
+            animation-delay: nth($animation-delay, $i);
+            animation-fill-mode: none;
+        }
 }
-.second-circle{
-    animation-delay: 6s;
-    animation-fill-mode: none;
-}
-.third-circle{
-    animation-delay: 8s;
-    animation-fill-mode: none;
-}
+
 @keyframes highlighted-circle{
     50%{
         background: $secondary;

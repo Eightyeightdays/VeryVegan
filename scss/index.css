@@ -329,24 +329,24 @@ body {
   color: grey;
 }
 
-.first-card {
+/* Create animation classes for cards */
+.card-1 {
   -webkit-animation-delay: 4s;
           animation-delay: 4s;
 }
 
-.second-card {
+.card-2 {
   -webkit-animation-delay: 6s;
           animation-delay: 6s;
 }
 
-.third-card {
+.card-3 {
   -webkit-animation-delay: 8s;
           animation-delay: 8s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   -webkit-animation: highlight-card-end 3s ease-out 9s forwards;
           animation: highlight-card-end 3s ease-out 9s forwards;
-  /* Maintain end state for third card */
 }
 
 @-webkit-keyframes highlight-card {
@@ -417,6 +417,7 @@ body {
   }
 }
 
+/* Create animation classes for icons */
 .icon-1 {
   -webkit-animation-delay: 4s;
           animation-delay: 4s;
@@ -432,7 +433,6 @@ body {
           animation-delay: 8s;
   -webkit-animation: highlight-icon-end 3s ease-out 8s forwards;
           animation: highlight-icon-end 3s ease-out 8s forwards;
-  /* Maintain end state for third icon */
 }
 
 .circle {
@@ -458,21 +458,22 @@ body {
   /* Animate circle colour on page load */
 }
 
-.first-circle {
-  -webkit-animation-fill-mode: none;
-          animation-fill-mode: none;
+/* Create animation classes for circles */
+.circle-1 {
   -webkit-animation-delay: 4s;
           animation-delay: 4s;
+  -webkit-animation-fill-mode: none;
+          animation-fill-mode: none;
 }
 
-.second-circle {
+.circle-2 {
   -webkit-animation-delay: 6s;
           animation-delay: 6s;
   -webkit-animation-fill-mode: none;
           animation-fill-mode: none;
 }
 
-.third-circle {
+.circle-3 {
   -webkit-animation-delay: 8s;
           animation-delay: 8s;
   -webkit-animation-fill-mode: none;

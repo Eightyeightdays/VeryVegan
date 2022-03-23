@@ -87,6 +87,7 @@
     opacity: 0;
     animation: fade 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
 }
+
 .first{
     animation-delay: 0.2s;
 }

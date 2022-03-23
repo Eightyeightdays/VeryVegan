@@ -161,35 +161,20 @@ $box-shadow: 0 10px 25px 3px HSL(0, 0%, 85%);
     }
 }
 
-.first{
-    animation-delay: 0.2s;
-}
-.second{
-    animation-delay: 0.5s;
-}
-.third{
-    animation-delay: 0.8s;
-}
-.fourth{
-    animation-delay: 1.1s;
-}
-.fifth{
-    animation-delay: 1.4s;
-}
-.sixth{
-    animation-delay: 1.7s;
-}
-.seventh{
-    animation-delay: 2s;
-}
-.eighth{
-    animation-delay: 2.3s;
-}
-.ninth{
-    animation-delay: 2.6s;
-}
-.tenth{
-    animation-delay: 2.9s;
+/* create classes for card animations */
+$animation-delay: 0.2s;
+
+@for $i from 1 through 10 {
+    @if $i == 1{
+        .card-1{
+            animation-delay: $animation-delay;
+        }
+    }@else{
+        .card-#{$i} {
+                animation-delay: $animation-delay + 0.3;
+                $animation-delay: $animation-delay + 0.3;
+            }
+        }
 }
 
 @keyframes fade{
