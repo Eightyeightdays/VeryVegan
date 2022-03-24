@@ -1,0 +1,14 @@
+$animation-delay: 0.2s;
+
+@for $i from 1 through 10 {
+    @if $i == 1{
+        .card-1{
+            animation-delay: $animation-delay;
+        }
+    }@else{
+        .card-#{$i} {
+                $animation-delay: $animation-delay + 0.3;
+                animation-delay: $animation-delay;
+            }
+        }
+}

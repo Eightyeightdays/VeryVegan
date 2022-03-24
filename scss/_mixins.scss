@@ -1,0 +1,33 @@
+// GENERATE MEDIA QUERIES
+
+@mixin media-query($size){
+    @if $size == tablet-1{
+        @media (min-width: 415px){
+            @content;
+        }
+    }@else if $size == tablet-2{
+        @media (min-width: 450px){
+            @content;
+        }
+    }@else if $size == tablet-3{
+        @media (min-width: 760px){
+            @content;
+        }
+    }@else if $size == desktop-1{
+        @media (min-width: 1000px){
+            @content;
+        }
+    }@else if $size == desktop-2{
+        @media (min-width: 1160px){
+            @content;
+        }
+    }@else if $size == desktop-3{
+        @media (min-width: 1400px){
+            @content;
+        }
+    }
+}
+
+
+
+   

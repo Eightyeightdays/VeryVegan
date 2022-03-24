@@ -1,0 +1,8 @@
+.heart-icon--index{
+    font-size: 1.5em;
+    color: white;
+
+    @include media-query(desktop-1){
+        margin-left: 20px;
+    }
+}

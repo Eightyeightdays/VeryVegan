@@ -1,0 +1,16 @@
+:root{
+    font-family: Roboto;
+    font-size: 14px;
+}
+
+a{
+    text-decoration: none;
+   
+    &:hover{
+        cursor: pointer;
+    }
+    &:visited{
+        color: inherit;
+    }
+
+}

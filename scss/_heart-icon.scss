@@ -1,0 +1,12 @@
+.heart-icon{
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    transition: color 0.3s ease-in;
+
+    &:hover{
+        color: $primary;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: $primary;
+        cursor: pointer;
+    }
+}
