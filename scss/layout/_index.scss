@@ -131,8 +131,12 @@ body{
             top: 20px;
         }
 
-        @include media-query(desktop-1){
+        @include media-query(tablet-1){
             top: 25px;
+        }
+
+        @include media-query(desktop-1){
+            top: 35px;
         }
     }
 }
