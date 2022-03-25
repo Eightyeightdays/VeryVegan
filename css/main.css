@@ -253,6 +253,10 @@ a:visited {
   color: inherit;
 }
 
+a:visited.button {
+  color: white;
+}
+
 .button {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -267,7 +271,6 @@ a:visited {
   background: linear-gradient(#FF79DA, #9356DC);
   -webkit-box-shadow: 0 10px 25px 3px HSL(0, 0%, 85%);
           box-shadow: 0 10px 25px 3px HSL(0, 0%, 85%);
-  padding: 15px 40px;
   -webkit-transition: background-color, -webkit-box-shadow 0.4s ease-out;
   transition: background-color, -webkit-box-shadow 0.4s ease-out;
   transition: background-color, box-shadow 0.4s ease-out;
@@ -305,6 +308,14 @@ a:visited {
   .button {
     margin-top: 20px;
   }
+}
+
+.button--index {
+  padding: 15px 20px;
+}
+
+.button--menu {
+  padding: 15px 40px;
 }
 
 .heart-icon {
@@ -619,18 +630,6 @@ body {
   width: max-content;
 }
 
-@media (min-width: 415px) {
-  .location__container {
-    font-size: 1.5em;
-  }
-}
-
-@media (min-width: 1000px) {
-  .location__container {
-    font-size: 2em;
-  }
-}
-
 .location__icon {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -650,19 +649,24 @@ body {
 @media (min-width: 415px) {
   .location__icon {
     left: -50px;
-    top: 20px;
+    top: 15px;
   }
 }
 
+.location__text {
+  font-size: 14px;
+  font-weight: normal;
+}
+
 @media (min-width: 415px) {
-  .location__icon {
-    top: 25px;
+  .location__text, .location__icon {
+    font-size: 16px;
   }
 }
 
 @media (min-width: 1000px) {
-  .location__icon {
-    top: 35px;
+  .location__text, .location__icon {
+    font-size: 20px;
   }
 }
 
@@ -724,6 +728,7 @@ body {
           flex-direction: column;
   padding-bottom: 50px;
   padding-top: 20px;
+  background: white;
 }
 
 @media (min-width: 415px) {
@@ -1118,13 +1123,12 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 15px;
+  padding: 0 30px 0 15px;
   height: 65px;
 }
 
 @media (min-width: 1000px) {
   .resto__card-details {
-    height: 100px;
     padding: 30px;
   }
 }
@@ -1157,7 +1161,7 @@ body {
   }
 }
 
-@media (min-width: 1160px) {
+@media (min-width: 1000px) {
   .resto__card-title, .resto__card-location {
     font-size: 24px;
   }
@@ -1363,9 +1367,6 @@ body {
           justify-content: center;
   margin-right: auto;
   padding: 12px;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 2 1;
-          flex: 0 2 1;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -1419,9 +1420,6 @@ body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  -webkit-box-flex: 2;
-      -ms-flex: 2 1 1;
-          flex: 2 1 1;
   padding: 10px;
   position: relative;
   right: 0;

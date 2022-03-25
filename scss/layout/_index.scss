@@ -107,14 +107,6 @@ body{
     &__container{
         position: relative;
         width: max-content;
-
-        @include media-query(tablet-1){
-            font-size: 1.5em;
-        }
-        
-        @include media-query(desktop-1){
-            font-size: 2em;
-        }
     }
 
     &__icon{
@@ -128,15 +120,22 @@ body{
 
         @include media-query(tablet-1){
             left: -50px;
-            top: 20px;
+            top: 15px;
         }
+    }
 
+    &__text{
+        font-size: 14px;
+        font-weight: normal;
+    }
+
+    &__text, &__icon{
         @include media-query(tablet-1){
-            top: 25px;
+            font-size: 16px;
         }
 
         @include media-query(desktop-1){
-            top: 35px;
+            font-size: 20px;
         }
     }
 }
@@ -184,6 +183,7 @@ body{
     flex-direction: column;
     padding-bottom: 50px;
     padding-top: 20px;
+    background: white;
 
     @include media-query(tablet-1){
         padding: 20px;
@@ -439,11 +439,10 @@ $animation-delay: (4s, 6s, 8s);
     &__card-details{
         display: flex;
         align-items: center;
-        padding: 15px;
+        padding: 0 30px 0 15px;
         height: 65px;
 
         @include media-query(desktop-1){
-            height: 100px;
             padding: 30px;
         }
     }
@@ -466,7 +465,7 @@ $animation-delay: (4s, 6s, 8s);
             font-size: 18px;
         }
 
-        @include media-query(desktop-2){
+        @include media-query(desktop-1){
             font-size: 24px;
         }
     }
