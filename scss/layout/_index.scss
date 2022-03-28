@@ -1,16 +1,15 @@
 :root{
     @include media-query(tablet-1){
-        :root{
             font-size: 16px;
-        }
     }
 }
 
 /* || LOADING SCREEN */
 
 body{
+    position: relative;
     overflow:hidden;
-    animation: unhide 4s ease-in 0.1s forwards;
+    animation: unhide 4.2s ease-in 0.1s forwards;
 
     @keyframes unhide{              /* Make scrollbar visible again once page has loaded */
         100%{
@@ -24,12 +23,12 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background: $tertiary;
     animation: loading 4s linear 1 forwards,
                disappear 1s linear 3s 1 forwards;
@@ -214,157 +213,9 @@ body{
             gap: 30px;
         }
     }
-
-    &__card-wrapper{
-        display: flex;
-        align-items: center;
-
-        @include media-query(tablet-1){
-            width: max-content;
-        }
-    }
-
-    &__card{
-        display: flex;
-        align-items: center;
-        background: $background;
-        border-radius: 25px;
-        padding: 8px;
-        margin: 15px 15px 5px 25px;
-        width: 100%;
-        box-shadow: $box-shadow;
-        position: relative;
-        animation: highlight-card 3s ease-out 6s;      /* Animate card colours on page load */
-
-        @keyframes highlight-card{
-            50%{
-                background: $highlight;
-                box-shadow: 0 10px 10px 0px HSL(0, 0%, 75%);
-            }
-            100%{
-                background: $background;
-            }
-        }
-
-        @include media-query(desktop-1){
-            padding-left: 30px;
-        }
-    }
-
-    &__card-text{
-        font-weight: bold;
-
-        @include media-query(tablet-1){
-            margin-right: 20px;
-        }
-
-        @include media-query(desktop-1){
-            padding-right: 20px;
-        }
-    }
-
-    &__icon{
-        animation: highlight-icon 3s ease-out 6s;   /* Animate card icon colours on page load */
-        margin: 20px;
-        color: grey;
-
-        @keyframes highlight-icon{
-            50%{
-               color: $primary;
-            }
-            100%{
-               color: grey;
-            }
-        }
-
-        @include media-query(desktop-1){
-            font-size: 1.5em;
-        }
-    }
 }
 
-/* || ANIMATION CLASSES */
-
-/* Create animation classes for overview cards */
-$animation-delay: (4s, 6s, 8s);
-
-@for $i from 1 through 3 {
-    @if $i == 3{
-        .oc-card-3{
-            animation-delay: nth($animation-delay, $i);
-            animation-fill-mode: forwards;
-            animation: highlight-card-end 3s ease-out 9s forwards;
-
-            @keyframes highlight-card-end{       /* maintain end state */
-                100%{
-                    background: $highlight;
-                }
-            }
-        }
-    }@else{
-        .oc-card-#{$i} {
-            animation-delay: nth($animation-delay, $i);
-        }
-    }
-}
-
-/* Create animation classes for icons */
-@for $i from 1 through 3 {
-    @if $i == 3{
-        .icon-3{
-            animation-delay: nth($animation-delay, $i);
-            animation: highlight-icon-end 3s ease-out 8s forwards;
-
-            @keyframes highlight-icon-end{      /* maintain end state */
-                100%{
-                    color: $primary;
-                }
-            }
-        }
-    }@else{
-        .icon-#{$i} {
-            animation-delay: nth($animation-delay, $i);
-        }
-    }
-}
-
-.circle{
-    background: $primary;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.75em;
-    position: absolute;
-    left: -10px;
-    animation: highlighted-circle 3s ease-out;   /* Animate circle colour on page load */
-
-    @keyframes highlighted-circle{
-        50%{
-            background: $secondary;
-        }
-    }
-
-    @include media-query(desktop-1){
-        width: 40px;
-        height: 40px;
-        font-size: 1.5em;
-        left: -20px;
-    }
-}
-
-/* Create animation classes for circles */
-@for $i from 1 through 3 {
-    .circle-#{$i} {
-            animation-delay: nth($animation-delay, $i);
-            animation-fill-mode: none;
-        }
-}
-
-/* || RESTAURANT CARDS */
+/* || RESTAURANT */
 
 .resto{
     background: $background;
@@ -387,90 +238,5 @@ $animation-delay: (4s, 6s, 8s);
             flex-wrap: wrap;
             justify-content: center;
         }
-    }
-
-    &__link{
-        color: black;
-
-        @include media-query(desktop-1){
-            flex-basis: 50%;
-        }
-    }
-
-    &__card{
-        background: white;
-        border-radius: 15px;
-        margin: 0 20px 15px 20px;
-        overflow: hidden;
-        box-shadow: $box-shadow;
-
-        @include media-query(tablet-1){
-            margin-bottom: 40px;
-        }
-    }
-
-    &__img-box{
-        position: relative;
-    }
-
-    &__img{
-        position: relative;
-        height: 160px;
-        width: 100%;
-        object-fit: cover;
-
-        @include media-query(tablet-1){
-            height: 220px;
-        }
-    }
-
-    &__img-label{
-        background: $tertiary;
-        color: #249376;
-        width: min-content;
-        padding: 5px 10px 5px 10px;
-        border-radius: 2px;
-        position: absolute;
-        top: 0px;
-        right: 10px;
-        z-index: 1;
-    }
-
-    &__card-details{
-        display: flex;
-        align-items: center;
-        padding: 0 30px 0 15px;
-        height: 65px;
-
-        @include media-query(desktop-1){
-            padding: 30px;
-        }
-    }
-
-    &__card-text{
-        margin-right: auto;
-
-        @include media-query(desktop-1){
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-    }
-
-    &__card-title, &__card-location{
-        font-size: 14px;
-        margin: 0;
-
-        @include media-query(tablet-1){
-            font-size: 18px;
-        }
-
-        @include media-query(desktop-1){
-            font-size: 24px;
-        }
-    }
-
-    &__card-title{
-        padding-bottom: 5px;
     }
 }

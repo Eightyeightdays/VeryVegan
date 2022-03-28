@@ -1,0 +1,175 @@
+.info-card{
+    background: white;
+    border-radius: 15px;
+    margin: 14px 10px;
+    box-shadow: $box-shadow;
+    display: flex;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    opacity: 0;
+    animation: fade 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+
+    @keyframes fade{
+        0%{
+            bottom: -20px;
+        }
+        20%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+            bottom: 0;
+        }
+    }
+
+    @include media-query(tablet-2){
+        margin: 20px 40px;
+    }
+
+    @include media-query(tablet-3){
+        margin: 30px 50px;
+    }
+
+    @include media-query(desktop-3){
+        margin: 20px 10px;
+    }
+
+    &:hover &__icon-box{
+        right: 0px;
+    }
+
+    &:hover &__icon{
+        transform: rotate(360deg);
+    }
+
+    &:hover &__details-text{
+        width: 100px;
+
+        @include media-query(tablet-3){
+            width: 220px;
+        }
+
+        @include media-query(desktop-3){
+            width: 140px;
+        }
+    }
+
+    &__text-box{
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        margin-right: auto;
+        padding: 12px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    &__title{
+        font-size: 16px;
+        padding-bottom: 8px;
+
+        @include media-query(tablet-2){
+            font-size: 18px;
+        }
+
+        @include media-query(tablet-3){
+            font-size: 20px;
+        }
+    }
+
+    &__title, &__subtitle{
+        margin: 0;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
+
+        @include media-query(tablet-3){
+            padding: 10px;
+        }
+
+        @include media-query(desktop-3){
+            padding: 5px;
+        }
+    }
+
+    &__details-box{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 10px;
+        position: relative;
+        right: 0;
+        transition: right 0.6s ease-out 0.2s;
+
+        @include media-query(tablet-2){
+            padding: 20px;
+        }
+
+        @include media-query(tablet-3){
+            padding-right: 50px;
+            transition-delay: 0s;
+        }
+
+        @include media-query(desktop-3){
+            padding: 0 20px 15px 0;
+            transition-delay: 0.1s;
+        }
+    }
+
+    &__details-text{
+        transition: width 0.6s ease-out 0.2s;
+        font-weight: bold;
+        margin: 0;
+        width: 30px;
+        position: relative;
+    }
+    
+    &__icon-box{
+        background: $tertiary;
+        width: 60px;
+        height: 100%;
+        color: white;
+        font-size: 1.5em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: -60px;
+        transition: right 1s ease-out;
+
+        @include media-query(tablet-3){
+            width: 200px;
+            right: -200px;
+            font-size: 2em;
+        }
+
+        @include media-query(desktop-3){
+            width: 100px;
+            right: -100px;
+        }
+    }
+
+    &__icon{
+        transition: all 1s ease-out;
+    }
+}
+
+/* create classes for card animations */
+$animation-delay: 0.2s;
+
+@for $i from 1 through 10 {
+    @if $i == 1{
+        .card-1{
+            animation-delay: $animation-delay;
+        }
+    }@else{
+        .card-#{$i} {
+                $animation-delay: $animation-delay + 0.3;
+                animation-delay: $animation-delay;
+            }
+        }
+}
+    

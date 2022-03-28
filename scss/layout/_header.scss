@@ -2,14 +2,46 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    background: white;
 
     &__arrow-container{
         position: absolute;
         left: 20px;
         top: 25px;
+
+        @include media-query(tablet-1){
+            left: 20px;
+            top: 30px;
+        }
+        @include media-query(tablet-3){
+            left: 40px;
+            top: 40px;
+        }
+        @include media-query(desktop-1){
+            left: 50px;
+            top: 45px;
+        }
+        @include media-query(desktop-3){
+            left: 60px;
+            top: 50px;
+        }
     }
     &__logo{
+        font-family: Shrikhand;
+        font-size: 24px;
         margin: 20px 0 10px 0;
-        width: 45%;
+
+        @include media-query(tablet-1){
+            font-size: 32px;
+        }
+        @include media-query(tablet-3){
+            font-size: 42px;
+        }
+        @include media-query(desktop-1){
+            font-size: 52px;
+        }
+        @include media-query(desktop-3){
+            font-size: 60px;
+        }
     }
 }

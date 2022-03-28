@@ -21,9 +21,16 @@
         text-decoration: underline;
     }
     &__logo{
-        filter: #{brightness(10000%)};
-        width: 28%;
+        font-family: Shrikhand;
+        font-size: 18px;
         margin-bottom: 10px;
+
+        @include media-query(tablet-1){
+            font-size: 24px;
+        }
+        @include media-query(tablet-3){
+            font-size: 34px;
+        }
     }
     &__icon{
         padding-right: 10px;
