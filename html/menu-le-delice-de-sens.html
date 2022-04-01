@@ -8,7 +8,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/min/menu-min.css">
     </head>
     <body>
         <header class="header">
@@ -19,7 +19,7 @@
         </header>
         <main>
             <div class="resto-preview">
-                <img class="resto-preview__img" alt="Restaurant «Le délice de sens»" src="../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg">
+                <img class="resto-preview__img" alt="Restaurant «Le délice de sens»" src="../images/large/le-delice-de-sens--large.jpg" srcset="../images/large/le-delice-de-sens--large.jpg 1920w, ../images/small/le-delice-de-sens--small.jpg 1000w" sizes="(min-width:1000px) 1920px, 1000px">
             </div>
 
             <div class="resto-title">
@@ -27,8 +27,8 @@
                 <span class="heart-icon heart-icon--menu fa fa-heart"></span>
             </div>
 
-            <section class="menu">
-                <div class="menu__starter-container">
+            <article class="menu">
+                <section class="menu__starter-container">
                     <h2 class="menu__subheading">ENTRÉES</h2>
                     <div class="menu__underline"></div>
                     
@@ -69,8 +69,8 @@
                             <i class="info-card__icon fas fa-check-circle"></i>
                         </div>
                     </div>
-                </div>
-                <div class="menu__main-container">
+                </section>
+                <section class="menu__main-container">
                     <h2 class="menu__subheading">PLATS</h2>
                     <div class="menu__underline"></div>
                     <div class="info-card card-4">
@@ -109,8 +109,8 @@
                             <i class="info-card__icon fas fa-check-circle"></i>
                         </div>
                     </div>
-                </div>
-                <div class="menu__dessert-container">
+                </section>
+                <section class="menu__dessert-container">
                     <h2 class="menu__subheading">DESSERTS</h2>
                     <div class="menu__underline"></div>
                     <div class="info-card card-7">
@@ -149,8 +149,8 @@
                             <i class="info-card__icon fas fa-check-circle"></i>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </article>
 
 
             <div id="order" class="order">
@@ -162,15 +162,15 @@
         </main>
         <footer class="footer">
             <span class="footer__logo">ohmyfood</span>
-            <a class="footer__link" href="">
+            <a class="footer__link" href="#">
                 <span class="footer__icon fas fa-utensils"></span>
                 <p class="footer__text">Proposer un restaurant</p>
             </a>
-            <a class="footer__link" href="">
+            <a class="footer__link" href="#">
                 <span class="footer__icon fas fa-hands-helping"></span>
                 <p class="footer__text">Devenir partenaire</p>
             </a>
-            <a class="footer__link" href=""><p class="footer__text">Mentions légales</p></a>
+            <a class="footer__link" href="#"><p class="footer__text">Mentions légales</p></a>
             <a class="footer__link" href="mailto:info@ohmyfood.fr"><p class="footer__text">Contact</p></a>
         </footer>
     </body>
