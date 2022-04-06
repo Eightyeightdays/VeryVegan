@@ -1,0 +1,91 @@
+/* || LOADING SCREEN */
+
+body{
+    position: relative;
+    overflow:hidden;
+    animation: unhide 4.2s ease-in 0.1s forwards;
+
+    @keyframes unhide{              /* Make scrollbar visible again once page has loaded */
+        100%{
+            overflow-y:visible;
+        }
+    }
+}
+
+.loading-screen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: $tertiary;
+    animation: loading 4s linear 1 forwards,
+               disappear 1s linear 3s 1 forwards;
+    font-family: Shrikhand;
+    font-size: 30px;
+    z-index: 2;
+
+    @keyframes loading{                 /* Cover whole screen during loading animation */
+        99.99%{
+            background: $tertiary;
+        }
+        100%{
+            background: transparent;
+        }
+    }
+    @keyframes disappear{               /* Remove loading screen to enable main page */
+        100%{
+            left: -999999px;
+            width: 0;
+            height: 0;
+        }
+    }
+
+    &__spinner{
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: block;
+        margin:15px auto;
+        position: relative;
+        color: $primary;
+        left: -100px;
+        box-sizing: border-box;
+        animation: spinner 3s linear 2; 
+
+        @keyframes spinner {
+            0% {
+              box-shadow: 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+            }
+            12% {
+              box-shadow: 100px 0 $primary, 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+            }
+            25% {
+              box-shadow: 110px 0 $primary, 100px 0 $primary, 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+            }
+            36% {
+              box-shadow: 120px 0 $primary, 110px 0 $primary, 100px 0 $primary, 0px 0 rgba(255, 255, 255, 0);
+            }
+            50% {
+              box-shadow: 130px 0 $primary, 120px 0 $primary, 110px 0 $primary, 100px 0 $primary;
+            }
+            62% {
+              box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 $primary, 120px 0 $primary, 110px 0 $primary;
+            }
+            75% {
+              box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 $primary, 120px 0 $primary;
+            }
+            87% {
+              box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 $primary;
+            }
+            100% {
+              box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0);
+            }
+          }
+    }
+}
