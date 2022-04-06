@@ -379,7 +379,7 @@ a:visited.button {
           align-items: center;
 }
 
-@media (min-width: 415px) {
+@media (min-width: 450px) {
   .numbered-card {
     width: -webkit-max-content;
     width: -moz-max-content;
@@ -1171,7 +1171,7 @@ body {
   }
 }
 
-@media (min-width: 415px) {
+@media (min-width: 450px) {
   .overview__wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
