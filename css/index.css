@@ -504,6 +504,7 @@ a:visited.button {
   -webkit-animation: highlighted-circle 3s ease-out;
           animation: highlighted-circle 3s ease-out;
   /* Animate circle colour on page load */
+  /* NOT REQUIRED BY THE SPEC */
 }
 
 @-webkit-keyframes highlighted-circle {

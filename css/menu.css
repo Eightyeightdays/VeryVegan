@@ -323,8 +323,8 @@ a:visited.button {
 }
 
 .info-card:hover .info-card__icon {
-  -webkit-transform: rotate(720deg);
-          transform: rotate(720deg);
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
 }
 
 .info-card:hover .info-card__details-text {
@@ -478,8 +478,22 @@ a:visited.button {
 }
 
 .info-card__icon {
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
+  -webkit-animation: rotate 0.3s ease-out 0.2s 1 forwards paused;
+          animation: rotate 0.3s ease-out 0.2s 1 forwards paused;
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 /* create classes for card animations */
