@@ -402,31 +402,15 @@ a:visited.button {
   -webkit-box-shadow: 0 10px 25px 3px HSL(0, 0%, 85%);
           box-shadow: 0 10px 25px 3px HSL(0, 0%, 85%);
   position: relative;
-  -webkit-animation: highlight-card 3s ease-out 6s;
-          animation: highlight-card 3s ease-out 6s;
-  /* Animate card colours on page load */
 }
 
-@-webkit-keyframes highlight-card {
-  50% {
-    background: #f4ecfe;
-    -webkit-box-shadow: 0 10px 10px 0px HSL(0, 0%, 75%);
-            box-shadow: 0 10px 10px 0px HSL(0, 0%, 75%);
-  }
-  100% {
-    background: #f5f5f5;
-  }
+.numbered-card__body:hover {
+  background: #f4ecfe;
+  cursor: pointer;
 }
 
-@keyframes highlight-card {
-  50% {
-    background: #f4ecfe;
-    -webkit-box-shadow: 0 10px 10px 0px HSL(0, 0%, 75%);
-            box-shadow: 0 10px 10px 0px HSL(0, 0%, 75%);
-  }
-  100% {
-    background: #f5f5f5;
-  }
+.numbered-card__body:hover .numbered-card__icon {
+  color: #9356DC;
 }
 
 @media (min-width: 1000px) {
@@ -452,29 +436,8 @@ a:visited.button {
 }
 
 .numbered-card__icon {
-  -webkit-animation: highlight-icon 3s ease-out 6s;
-          animation: highlight-icon 3s ease-out 6s;
-  /* Animate card icon colours on page load */
   margin: 20px;
   color: grey;
-}
-
-@-webkit-keyframes highlight-icon {
-  50% {
-    color: #9356DC;
-  }
-  100% {
-    color: grey;
-  }
-}
-
-@keyframes highlight-icon {
-  50% {
-    color: #9356DC;
-  }
-  100% {
-    color: grey;
-  }
 }
 
 @media (min-width: 1000px) {
@@ -501,22 +464,6 @@ a:visited.button {
   font-size: 0.75em;
   position: absolute;
   left: -10px;
-  -webkit-animation: highlighted-circle 3s ease-out;
-          animation: highlighted-circle 3s ease-out;
-  /* Animate circle colour on page load */
-  /* NOT REQUIRED BY THE SPEC */
-}
-
-@-webkit-keyframes highlighted-circle {
-  50% {
-    background: #FF79DA;
-  }
-}
-
-@keyframes highlighted-circle {
-  50% {
-    background: #FF79DA;
-  }
 }
 
 @media (min-width: 1000px) {
@@ -526,96 +473,6 @@ a:visited.button {
     font-size: 1.5em;
     left: -20px;
   }
-}
-
-/* || ANIMATION CLASSES */
-/* NOT REQUIRED BY THE SPEC */
-/* Create animation classes for numbered cards */
-.nc-card-1 {
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
-}
-
-.nc-card-2 {
-  -webkit-animation-delay: 6s;
-          animation-delay: 6s;
-}
-
-.nc-card-3 {
-  -webkit-animation-delay: 8s;
-          animation-delay: 8s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation: highlight-card-end 3s ease-out 9s forwards;
-          animation: highlight-card-end 3s ease-out 9s forwards;
-}
-
-@-webkit-keyframes highlight-card-end {
-  /* maintain end state */
-  100% {
-    background: #f4ecfe;
-  }
-}
-
-@keyframes highlight-card-end {
-  /* maintain end state */
-  100% {
-    background: #f4ecfe;
-  }
-}
-
-/* Create animation classes for icons */
-.icon-1 {
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
-}
-
-.icon-2 {
-  -webkit-animation-delay: 6s;
-          animation-delay: 6s;
-}
-
-.icon-3 {
-  -webkit-animation-delay: 8s;
-          animation-delay: 8s;
-  -webkit-animation: highlight-icon-end 3s ease-out 8s forwards;
-          animation: highlight-icon-end 3s ease-out 8s forwards;
-}
-
-@-webkit-keyframes highlight-icon-end {
-  /* maintain end state */
-  100% {
-    color: #9356DC;
-  }
-}
-
-@keyframes highlight-icon-end {
-  /* maintain end state */
-  100% {
-    color: #9356DC;
-  }
-}
-
-/* Create animation classes for circles */
-.circle-1 {
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
-  -webkit-animation-fill-mode: none;
-          animation-fill-mode: none;
-}
-
-.circle-2 {
-  -webkit-animation-delay: 6s;
-          animation-delay: 6s;
-  -webkit-animation-fill-mode: none;
-          animation-fill-mode: none;
-}
-
-.circle-3 {
-  -webkit-animation-delay: 8s;
-          animation-delay: 8s;
-  -webkit-animation-fill-mode: none;
-          animation-fill-mode: none;
 }
 
 .button {
